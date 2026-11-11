@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Buku - Perpustakaan Sekolah Nelita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="site-header">
+        <h1>Katalog Buku</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="katalog.html">Katalog Buku</a></li>
+                <li><a href="pencarian.html">Pencarian</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+                <li id="nav-auth"><a href="login.html">Masuk / Daftar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="katalog">
+            <div class="katalog-header">
+                <h2>Daftar Buku</h2>
+                <div id="admin-controls" class="admin-controls" style="display:none;">
+                    <div class="admin-section">
+                        <button id="show-add-book" class="btn-secondary">Tambah Buku</button>
+                        <form id="add-book-form" class="add-book-form" style="display:none;">
+                            <input id="new-title" placeholder="Judul buku" required>
+                            <input id="new-author" placeholder="Penulis" required>
+                            <select id="new-genre" aria-label="Pilih genre"></select>
+                            <input id="new-img" placeholder="URL gambar (opsional)">
+                            <button type="submit" class="btn-primary">Simpan</button>
+                        </form>
+                    </div>
+                    <div class="admin-section">
+                        <button id="show-genre-manager" class="btn-secondary">Kelola Genre</button>
+                        <div id="genre-manager" style="display:none; margin-left:8px;">
+                            <form id="add-genre-form" style="display:flex; gap:0.5rem; align-items:center; margin-bottom:0.6rem;">
+                                <input id="genre-name" placeholder="Nama genre" required>
+                                <button type="submit" class="btn-primary">Tambah Genre</button>
+                            </form>
+                            <div id="genre-list" class="genre-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="book-list" class="book-list"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Perpustakaan Sekolah Nelita. Semua hak dilindungi.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
