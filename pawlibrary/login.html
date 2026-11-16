@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1f2b6e">
+
+    <title>Masuk - PAWPAW</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+
+    <main class="auth-container">
+
+        <!-- LEFT BANNER -->
+        <section class="auth-banner">
+
+            <a href="index.html" class="auth-brand" aria-label="PAWPAW">
+                <svg class="pp-paw" viewBox="0 0 64 64" aria-hidden="true">
+                    <ellipse cx="14" cy="26" rx="7" ry="10" transform="rotate(-20 14 26)"/>
+                    <ellipse cx="27" cy="14" rx="7" ry="10" transform="rotate(-8 27 14)"/>
+                    <ellipse cx="42" cy="14" rx="7" ry="10" transform="rotate(8 42 14)"/>
+                    <ellipse cx="54" cy="27" rx="7" ry="10" transform="rotate(20 54 27)"/>
+                    <path d="M32 30c-10 0-20 10-20 20 0 7 6 9 12 8 5-1 6-2 8-2s3 1 8 2c6 1 12-1 12-8 0-10-10-20-20-20z"/>
+                </svg>
+                <span class="pp-logo-text">PAWPAW<sup>®</sup></span>
+            </a>
+
+            <div class="banner-content">
+
+                <span class="banner-tag">YOUR WORLD OF BOOKS</span>
+
+                <h1>
+                    Temukan Dunia<br>
+                    Baru Melalui<br>
+                    <span>Membaca.</span>
+                </h1>
+
+                <p>
+                    Setiap buku memiliki cerita, dan setiap cerita
+                    membawa kita menuju petualangan baru.
+                    Mulailah perjalananmu bersama PAWPAW.
+                </p>
+
+                <div class="banner-decoration">
+                    <span>✦</span>
+                    <span>✧</span>
+                    <span>✦</span>
+                </div>
+
+            </div>
+
+            <div class="banner-footer">
+                © 2026 PAWPAW · Your World of Books
+            </div>
+
+        </section>
+
+        <!-- RIGHT LOGIN FORM -->
+        <section class="auth-form-section">
+
+            <div class="auth-form-wrapper">
+
+                <div class="auth-heading">
+
+                    <span class="auth-welcome">WELCOME BACK!</span>
+
+                    <h2>Selamat Datang<br>Kembali! 👋</h2>
+
+                    <p>
+                        Senang melihatmu kembali.
+                        Masuk ke akunmu dan lanjutkan perjalanan membacamu.
+                    </p>
+
+                </div>
+
+                <form id="login-form">
+
+                    <div class="login-field">
+                        <label for="login-email">Email atau Nomor Telepon</label>
+
+                        <input
+                            type="text"
+                            id="login-email"
+                            name="email"
+                            placeholder="nama@email.com atau 08xxxxxxxxxx"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <div class="login-field">
+                        <label for="login-password">Password</label>
+
+                        <input
+                            type="password"
+                            id="login-password"
+                            name="password"
+                            placeholder="Masukkan password"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="login-button" id="login-submit">
+                        Masuk Sekarang
+                        <span>→</span>
+                    </button>
+
+                    <p id="login-message" class="login-message"></p>
+
+                </form>
+
+                <div class="auth-divider">
+                    <span>Belum menjadi anggota?</span>
+                </div>
+
+                <a href="register.html" class="register-button">
+                    Buat Akun Baru
+                </a>
+
+                <a href="index.html" class="back-home">
+                    ← Kembali ke Beranda
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

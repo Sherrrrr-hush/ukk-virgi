@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3a54d0">
+
+    <title>PAWPAW - Pencarian Buku</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- ===== HEADER ===== -->
+    <header class="pp-header">
+
+        <div class="pp-topbar">
+
+            <a href="index.html" class="pp-logo" aria-label="PAWPAW">
+                <svg class="pp-paw" viewBox="0 0 64 64" aria-hidden="true">
+                    <ellipse cx="14" cy="26" rx="7" ry="10" transform="rotate(-20 14 26)"/>
+                    <ellipse cx="27" cy="14" rx="7" ry="10" transform="rotate(-8 27 14)"/>
+                    <ellipse cx="42" cy="14" rx="7" ry="10" transform="rotate(8 42 14)"/>
+                    <ellipse cx="54" cy="27" rx="7" ry="10" transform="rotate(20 54 27)"/>
+                    <path d="M32 30c-10 0-20 10-20 20 0 7 6 9 12 8 5-1 6-2 8-2s3 1 8 2c6 1 12-1 12-8 0-10-10-20-20-20z"/>
+                </svg>
+                <span class="pp-logo-text">PAWPAW<sup>®</sup></span>
+            </a>
+
+            <div class="pp-auth">
+                <a href="register.html" id="nav-register">Create account</a>
+                <a href="login.html" id="nav-auth">Sign in</a>
+            </div>
+
+        </div>
+
+        <nav class="pp-nav" aria-label="Navigasi utama">
+
+            <button class="pp-toggle nav-toggle"
+                type="button"
+                aria-label="Buka menu navigasi"
+                aria-expanded="false"
+                aria-controls="main-navigation">☰</button>
+
+            <ul class="pp-links" id="main-navigation">
+
+                <li>
+                    <a href="index.html">
+                        <svg viewBox="0 0 24 24" class="pp-ico">
+                            <path d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3z"/>
+                        </svg>
+                        Beranda
+                    </a>
+                </li>
+
+                <li class="pp-dropdown">
+                    <button type="button" class="pp-drop-btn"
+                        aria-haspopup="true" aria-expanded="false">
+
+                        <svg viewBox="0 0 24 24" class="pp-ico pp-ico-line">
+                            <path d="M12 6C9 4 5 4 2 5v14c3-1 7-1 10 1 3-2 7-2 10-1V5c-3-1-7-1-10 1zM12 6v14"/>
+                        </svg>
+
+                        Books <span class="pp-chev">⌵</span>
+                    </button>
+
+                    <ul class="pp-menu">
+                        <li><a href="katalog.html">Katalog Buku</a></li>
+                        <li><a href="pencarian.html" class="active">Pencarian</a></li>
+                        <li><a href="riwayat.html">Riwayat Peminjaman</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="tentang.html">
+                        Tentang Kami
+                    </a>
+                </li>
+
+                <li>
+                    <a href="kontak.html">
+                        Kontak
+                    </a>
+                </li>
+
+                <li>
+                    <a href="panduan.html">Panduan</a>
+                </li>
+
+                <li class="pp-push">
+                    <a href="profile.html" class="profile-nav-link">
+                        <svg viewBox="0 0 24 24" class="pp-ico pp-ico-line">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 21c0-4.5 3.6-7 8-7s8 2.5 8 7"/>
+                        </svg>
+                        Profil Saya
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- ===== HERO PENCARIAN ===== -->
+    <section class="pp-hero">
+
+        <h1>Find Book You Looking For</h1>
+
+        <form class="pp-search" id="hero-search-form"
+            action="pencarian.html" method="get" role="search">
+
+            <input
+                type="text"
+                name="q"
+                id="hero-search"
+                placeholder="Cari buku yang anda cari"
+                aria-label="Cari buku">
+
+            <button type="submit">Search</button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ===== STATISTIK ===== -->
+    <section class="pp-stats" aria-label="Statistik perpustakaan">
+
+        <div class="pp-stat">
+            <div class="pp-circle">
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <rect x="8" y="22" width="60" height="58" rx="5"
+                        fill="#3a4a9c" transform="rotate(-8 38 51)"/>
+                    <path d="M18 24h30c4 0 6 2 6 6v46H24c-4 0-6-2-6-6z"
+                        fill="#e9edf5"/>
+                    <path d="M82 24H52c-4 0-6 2-6 6v46h30c4 0 6-2 6-6z"
+                        fill="#cfd7e8"/>
+                    <rect x="24" y="32" width="18" height="16" fill="#2f6fe0"/>
+                    <rect x="58" y="40" width="18" height="12" fill="#3a4a9c"/>
+                </svg>
+            </div>
+
+            <div class="pp-stat-text">
+                <h3>Books</h3>
+                <p class="pp-num" id="stat-books">0</p>
+            </div>
+        </div>
+
+        <div class="pp-stat">
+            <div class="pp-circle">
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <circle cx="50" cy="38" r="20" fill="#4a6cff"/>
+                    <path d="M12 92c0-22 16-34 38-34s38 12 38 34z"
+                        fill="#4a6cff"/>
+                </svg>
+            </div>
+
+            <div class="pp-stat-text">
+                <h3>Registered</h3>
+                <p class="pp-num" id="stat-registered">0</p>
+            </div>
+        </div>
+
+        <div class="pp-stat">
+            <div class="pp-circle">
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <circle cx="50" cy="50" r="40" fill="#4a6cff"/>
+                    <circle cx="50" cy="50" r="33" fill="#4db3ff"/>
+                    <path d="M48 24v28l16 12" stroke="#4a6cff"
+                        stroke-width="7" fill="none"
+                        stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <div class="pp-stat-text">
+                <h3>Borrowed</h3>
+                <p class="pp-num" id="stat-borrowed">0</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+
+        <!-- SEARCH SECTION -->
+        <section class="search-panel">
+
+            <div class="section-title">
+                <div>
+                    <span class="section-eyebrow">FIND YOUR BOOK</span>
+                    <h2>Cari Buku Favoritmu</h2>
+                    <p>
+                        Masukkan judul buku atau nama penulis
+                        untuk menemukan koleksi yang kamu inginkan.
+                    </p>
+                </div>
+            </div>
+
+            <div class="discovery-search">
+
+                <div class="discovery-search-box">
+
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="search"
+                        id="search"
+                        class="discovery-input"
+                        placeholder="Masukkan judul buku atau nama penulis..."
+                    >
+
+                </div>
+
+                <select id="genre-filter" class="discovery-filter">
+                    <option value="">Semua Genre</option>
+                </select>
+
+                <button type="button" id="search-btn"
+                    class="discovery-search-button">
+                    Cari Buku <span>→</span>
+                </button>
+
+            </div>
+
+            <!-- PENCARIAN POPULER -->
+            <div class="popular-searches">
+
+                <span>Pencarian populer:</span>
+
+                <a href="#" data-search="Matematika">Matematika</a>
+                <a href="#" data-search="Sejarah">Sejarah</a>
+                <a href="#" data-search="Sains">Sains</a>
+                <a href="#" data-search="Novel">Novel</a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== GENRE ===== -->
+        <section class="genre-section">
+
+            <div class="section-title">
+
+                <div>
+                    <span class="section-eyebrow">EXPLORE BY CATEGORY</span>
+                    <h2>Jelajahi Berdasarkan Genre</h2>
+                    <p>Pilih kategori buku sesuai minat dan kesukaanmu.</p>
+                </div>
+
+            </div>
+
+            <div class="category-discovery-grid">
+
+                <button class="category-discovery-card category-science"
+                    type="button" data-genre="Sains">
+
+                    <span class="category-icon">🔬</span>
+
+                    <span class="category-card-text">
+                        <strong>Sains</strong>
+                        <small>Ilmu pengetahuan dan teknologi</small>
+                    </span>
+
+                    <span class="category-arrow">↗</span>
+
+                </button>
+
+                <button class="category-discovery-card category-history"
+                    type="button" data-genre="Sejarah">
+
+                    <span class="category-icon">🏛️</span>
+
+                    <span class="category-card-text">
+                        <strong>Sejarah</strong>
+                        <small>Kisah dan peristiwa masa lalu</small>
+                    </span>
+
+                    <span class="category-arrow">↗</span>
+
+                </button>
+
+                <button class="category-discovery-card category-general"
+                    type="button" data-genre="Umum">
+
+                    <span class="category-icon">📚</span>
+
+                    <span class="category-card-text">
+                        <strong>Umum</strong>
+                        <small>Berbagai bacaan menarik</small>
+                    </span>
+
+                    <span class="category-arrow">↗</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== HASIL PENCARIAN ===== -->
+        <section class="discovery-results">
+
+            <div class="section-title">
+
+                <div>
+                    <span class="section-eyebrow">SEARCH RESULTS</span>
+                    <h2>Hasil Pencarian</h2>
+                    <p>
+                        Buku yang sesuai dengan pencarianmu
+                        akan muncul di sini.
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="hasil" class="book-grid">
+
+                <div class="discovery-empty">
+                    <div>📖</div>
+
+                    <h3>Mulai Jelajahi Buku</h3>
+
+                    <p>
+                        Masukkan judul buku, nama penulis,
+                        atau pilih genre untuk menemukan
+                        buku favoritmu.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== TIPS ===== -->
+        <section class="discovery-tip">
+
+            <div class="tip-icon">💡</div>
+
+            <div>
+                <strong>Tips mencari buku</strong>
+
+                <p>
+                    Kamu bisa mencari menggunakan sebagian judul buku
+                    atau nama penulis agar lebih mudah menemukan koleksi.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="main-footer">
+            <p>© 2026 <strong>PAWPAW</strong> · Your World of Books.</p>
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- ===== JAVASCRIPT ===== -->
+<script src="script.js"></script>
+
+
+<!-- ===== HEADER INTERACTION ===== -->
+<script>
+(function () {
+
+    if (window.ppHeaderReady) return;
+
+    var header = document.querySelector('.pp-header');
+    if (!header) return;
+
+    window.ppHeaderReady = true;
+
+    var toggle = header.querySelector('.pp-toggle');
+    var dropBtn = header.querySelector('.pp-drop-btn');
+    var dropLi = header.querySelector('.pp-dropdown');
+
+    if (toggle) {
+        toggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+
+            var open = header.classList.toggle('nav-open');
+
+            toggle.setAttribute('aria-expanded', String(open));
+        });
+    }
+
+    if (dropBtn && dropLi) {
+        dropBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+
+            var open = dropLi.classList.toggle('open');
+
+            dropBtn.setAttribute('aria-expanded', String(open));
+        });
+    }
+
+    document.addEventListener('click', function (e) {
+
+        if (dropLi && !dropLi.contains(e.target)) {
+            dropLi.classList.remove('open');
+
+            if (dropBtn) {
+                dropBtn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        if (!header.contains(e.target)) {
+            header.classList.remove('nav-open');
+
+            if (toggle) {
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+    });
+
+})();
+</script>
+
+
+<!-- ===== SEARCH INTERACTION ===== -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchInput = document.getElementById("search");
+    const searchButton = document.getElementById("search-btn");
+    const genreFilter = document.getElementById("genre-filter");
+    const results = document.getElementById("hasil");
+    const heroInput = document.getElementById("hero-search");
+    const heroForm = document.getElementById("hero-search-form");
+
+    function runSearch() {
+        if (searchButton) {
+            searchButton.click();
+        }
+    }
+
+    // Pencarian melalui Enter
+    searchInput.addEventListener("keydown", function (event) {
+
+        if (event.key === "Enter") {
+            event.preventDefault();
+            runSearch();
+        }
+
+    });
+
+    // Pencarian melalui Hero
+    if (heroForm) {
+        heroForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            searchInput.value = heroInput.value;
+
+            runSearch();
+
+            document.querySelector(".search-panel").scrollIntoView({
+                behavior: "smooth"
+            });
+
+        });
+    }
+
+    // Membaca parameter pencarian dari URL
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("q");
+
+    if (query) {
+        searchInput.value = query;
+        if (heroInput) heroInput.value = query;
+        runSearch();
+    }
+
+    // Pencarian populer
+    document.querySelectorAll("[data-search]").forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            searchInput.value = this.dataset.search;
+
+            runSearch();
+
+        });
+
+    });
+
+    // Pilihan genre
+    document.querySelectorAll("[data-genre]").forEach(function (card) {
+
+        card.addEventListener("click", function () {
+
+            const genreName = this.dataset.genre.trim().toLowerCase();
+
+            const matchingOption = Array.from(genreFilter.options).find(
+                function (option) {
+
+                    return (
+                        option.value.trim().toLowerCase() === genreName ||
+                        option.textContent.trim().toLowerCase() === genreName
+                    );
+
+                }
+            );
+
+            if (matchingOption) {
+
+                genreFilter.value = matchingOption.value;
+                searchInput.value = "";
+
+                runSearch();
+
+                results.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            } else {
+
+                alert("Genre tersebut belum tersedia di database.");
+
+            }
+
+        });
+
+    });
+
+});
+</script>
+
+</body>
+</html>
+```
